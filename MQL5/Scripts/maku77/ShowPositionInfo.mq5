@@ -90,14 +90,29 @@ string getPositionInfoDouble() {
     return s;
 }
 
+void showPositionInfo(int posIndex) {
+    // ポジションを選択状態にする
+    if (PositionGetSymbol(posIndex) == "") {
+        Alert("インデックス ", posIndex, " のポジションの選択に失敗しました");
+        return;
+    }
+
+    // 選択したポジションの内容を表示
+    string msg = StringFormat("%s\n%s\n%s",
+        getPositionInfoStr(),
+        getPositionInfoInteger(),
+        getPositionInfoDouble()
+    );
+    MessageBox(msg, StringFormat("Position[%d]", posIndex));
+}
+
 void OnStart() {
     const int total = PositionsTotal();
-    for (int i = 0; i < total; i++) {
-        PositionGetSymbol(i);  // ポジションを選択状態にする
-        string s = StringFormat("%s\n%s\n%s",
-            getPositionInfoStr(),
-            getPositionInfoInteger(),
-            getPositionInfoDouble());
-        MessageBox(s, StringFormat("Position[%d]", i));
+    if (total == 0) {
+        MessageBox("ポジションはありません");
+        return;
+    }
+    for (int i = 0; i < total + 1; i++) {
+        showPositionInfo(i);
     }
 }
