@@ -112,7 +112,7 @@ void OnStart() {
         MessageBox("ポジションはありません");
         return;
     }
-    for (int i = 0; i < total + 1; i++) {
+    for (int i = 0; i < total; i++) {
         showPositionInfo(i);
     }
 }
