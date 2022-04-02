@@ -20,11 +20,9 @@ if "%data_dir%"=="" (
 )
 
 REM Create symbolic links
+set DIRS=Experts,Images,Include,Indicators,Libraries,Scripts
 cd /d %data_dir%
-mklink /d MQL5\Experts\%user% %current_dir%MQL5\Experts\%user%
-mklink /d MQL5\Images\%user% %current_dir%MQL5\Images\%user%
-mklink /d MQL5\Include\%user% %current_dir%MQL5\Include\%user%
-mklink /d MQL5\Indicators\%user% %current_dir%MQL5\Indicators\%user%
-mklink /d MQL5\Libraries\%user% %current_dir%MQL5\Libraries\%user%
-mklink /d MQL5\Scripts\%user% %current_dir%MQL5\Scripts\%user%
+FOR %%A IN (%DIRS%) DO (
+    mklink /d MQL5\%%A\%user% %current_dir%MQL5\%%A\%user%
+)
 

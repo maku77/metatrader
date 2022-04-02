@@ -1,16 +1,29 @@
-# metatrader
+metatrader
+====
 
 MetaTrader による自動トレード用のエキスパートアドバイザおよびカスタムインジケータです。
 
-## インストール方法
+
+インストール方法
+----
+
+### ソースコードのクローン
+
+```
+cd /d D:\gitwork
+git clone https://github.com/maku77/metatrader
+```
+
+### MT5 から参照できるようにする
 
 MetaTrader のデータディレクトリから、シンボリックリンクを張ることで、各ソースコードを参照できるようにします。
 シンボリックリンクの作成は、`create-symlinks` バッチファイルで自動化してあります。
 バッチファイルのパラメータとして、MetaTrader のデータディレクトリのパスを指定してください（MetaTrader 上で `Ctrl+Shift+D` で確認できます）。
 
-```
-git clone https://github.com/maku77/metatrader
-cd metatrader
+シンボリックリンクの作成に管理者権限が必要になるので、__`Win + R`__ → __`cmd`__ → __`Ctrl + Shift + Enter`__ でコマンドプロンプトを起動します。
+
+```console
+cd /d D:\gitwork\metatrader
 create-symlinks C:\Users\maku\AppData\Roaming\MetaQuotes\Terminal\84E63...30A1E
 ```
 
