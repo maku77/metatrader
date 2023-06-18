@@ -3,7 +3,7 @@
 #property version "1.00"
 #property strict
 
-string getAccountInfoStr() {
+string getAccountInfoInteger() {
     // 口座番号
     long login = AccountInfoInteger(ACCOUNT_LOGIN);
     // 口座取引モード
@@ -112,7 +112,7 @@ string getAccountInfoString() {
 }
 
 void OnStart() {
-    MessageBox(getAccountInfoStr() + "\n\n" +
+    MessageBox(getAccountInfoInteger() + "\n\n" +
         getAccountInfoDouble() + "\n\n" +
         getAccountInfoString());
 }
