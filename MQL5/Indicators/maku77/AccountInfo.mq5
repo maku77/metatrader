@@ -2,7 +2,7 @@
  * Show account information as comment.
  */
 #property copyright "maku77"
-#property link "https://maku77.github.io/"
+#property link "https://toushi.maku.blog"
 #property version "1.00"
 #property strict
 #property indicator_chart_window
